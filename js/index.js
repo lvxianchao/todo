@@ -11,7 +11,6 @@ $(function(){
     */
     $(window).on('keydown', function(e){
         if( e.keyCode==13 ){
-            // console.log($('textarea').is(':focus'));
             if( $('#new-task').is(':focus') ){
                 $('#submit').click();
             } else if( $('textarea').is(':focus') ){
@@ -118,13 +117,12 @@ $(function(){
 
     /**
      * 文本域失去焦点, 保存更改
-    */
+     */
     $(document).on('blur', 'textarea', function(e){
         let _this = e.target;
         if( $(_this).val() ){
             // 行索引
             let index = $(_this).parents('tr').index()-2;
-            // return console.log($(_this).parents('tr').index());
             // 更新数据
             let data = JSON.parse(localStorage.getItem('data'));
             data.tasks[index].content = $(_this).val();
