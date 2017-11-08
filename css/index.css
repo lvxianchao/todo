@@ -4,3 +4,4 @@ body{ padding-bottom: 50px; padding-top: 70px; }
 .glyphicon{ cursor: pointer; }
 del{ color: #999; }
 textarea.form-control{ resize: none; }
+.table{ word-break: break-all; }
