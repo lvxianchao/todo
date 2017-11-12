@@ -18,52 +18,48 @@
         <nav class="col-md-2 col-md-offset-1 nav-side">
             <div class="page-header">
                 <h1 class="text-primary">ToDo
-                    <small class="text-success">0.1</small>
+                    <small class="text-success" id="version">1.0.0</small>
                 </h1>
 
             </div>
             <ul class="nav nav-pills nav-stacked">
                 <li class="active">
-                    <a href="">选项设置</a>
+                    <a href="javascript: void(0)" data-id="version-history">版本历史</a>
                 </li>
                 <li>
-                    <a href="">版本历史</a>
-                </li>
-                <li>
-                    <a href="">其它</a>
+                    <a href="javascript: void(0)" data-id="other">其它</a>
                 </li>
             </ul>
         </nav>
 
         <div class="col-md-8 col-md-offset-3">
-            <div class="alert alert-success">感谢段宝玲女士设计的LOGO</div>
+            <div class="alert alert-warning">感谢段宝玲女士设计的LOGO</div>
 
-            <div class="panel panel-info">
-                <div class="panel-heading">选项</div>
+            <div class="panel panel-info" id="version-history">
+                <div class="panel-heading">版本历史</div>
                 <div class="panel-body">
-                    <form class="form" action="">
-                        <div class="row">
-                            <div class="col-md-3">是否开启云端存储</div>
-                            <div class="col-md-9">
-                                <label class="radio-inline">
-                                    <input type="radio" name="is-sync" value="y" checked>是
-                                </label>
-                                <label class="radio-inline">
-                                    <input type="radio" name="is-sync" value="n">否
-                                </label>
-                            </div>
-                        </div>
-                    </form>
-
+                    <table class="table table-hover text-center">
+                        <tr>
+                            <th class="col-md-1 text-center">#</th>
+                            <th class="col-md-1 text-center">版本号</th>
+                            <th class="col-md-2 text-center">日期</th>
+                            <th class="col-md-8 text-center">更新内容</th>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>1.0.0</td>
+                            <td>2017-11-12</td>
+                            <td class="text-left">包括基本的功能：添加，修改，删除，标记完成状态, 数据存储在本地和云端(需要登录Google账号)。</td>
+                        </tr>
+                    </table>
                 </div>
             </div>
 
-            <div class="panel panel-info panel-about">
+            <div class="panel panel-info hidden" id="other">
                 <div class="panel-heading">背景</div>
                 <div class="panel-body">
                     <p>web开发人员平日的工作离不开浏览器，经常需要随手记录下一点什么东西，现开一个软件太费劲了。而且我会需要在不同的计算机上同步，甚至可以设置哪些记录同步，哪些不同步。</p>
                     <p>于是在扩展商店里搜索了一下，这方便的插件只有两款，都非常不错，但都不适合我。</p>
-                    <p>其中一款功能非常强大，另一款功能很简单实用，但还有一些地方不能满足我，比如：有些记录我需要同步的云端，但有些不需要，如果能有一个分组|分类|标签这种功能，甚至针对于不同的分组，设置不同的同步需求等等。</p>
                     <p>从大学时便开始使用Chrome，我决心为Chrome贡献一点什么，于是就有了这款插件。</p>
                     <p>另外，我必须感谢
                         <strong>Simple to do</strong> 这款插件，在我决心写这个插件之前，一直用的这款插件，
