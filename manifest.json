@@ -1,7 +1,7 @@
 {
     "manifest_version": 2,
     "name": "ToDo",
-    "version": "1.0.0",
+    "version": "1.1.1",
     "description": "Simple extension for task management",
     "icons": {
         "16": "images/16.png",
@@ -22,5 +22,6 @@
     ],
     "background": {
         "scripts": ["js/background.js"]
-    }
+    },
+    "update_url": "https://github.com/lvxianchao/chrome-todo-update/updates.xml"
 }
