@@ -1,11 +1,6 @@
 class Todo {
 
     constructor() {
-        // 获取数据
-        // chrome.storage.sync.get(['options', 'tasks'], function (items) {
-        //     let data = isObjEmpty(items) ? {"options": {"sync": true},"tasks": []} : {"options": items.options, "tasks": items.tasks};
-        //     window.localStorage.setItem('todo', JSON.stringify(data));
-        // });
 
         // 颜色映射
         this.color = ['', 'text-primary', 'text-info', 'text-success', 'text-waning', 'text-danger'],
@@ -164,8 +159,7 @@ class Todo {
     }
 
 }
-// chrome.storage.local.clear();
-// chrome.storage.sync.clear();
+
 
 $(function () {
 
@@ -253,8 +247,4 @@ $(function () {
         return $(e.target).parents('.row').index() - 1;
     }
 
-
-
-
 });
-
