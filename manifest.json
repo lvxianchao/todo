@@ -23,5 +23,5 @@
     "background": {
         "scripts": ["js/background.js"]
     },
-    "update_url": "https://github.com/lvxianchao/chrome-todo-update/updates.xml"
+    "update_url": "https://lvxianchao.github.io/updates.xml"
 }
