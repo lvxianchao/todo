@@ -22,6 +22,5 @@
     ],
     "background": {
         "scripts": ["js/background.js"]
-    },
-    "update_url": "https://lvxianchao.github.io/updates.xml"
+    }
 }
