@@ -8,8 +8,9 @@ class Todo {
         // 表格模板
         this.template = `<tr class="row">
                                 <td class="col-xs-1"><span class="glyphicon status"></span></td>
-                                <td class="col-xs-9"></td>
+                                <td class="col-xs-8"></td>
                                 <td>
+                                    <div class="col-xs-1"><span class="glyphicon glyphicon-file"></span></div>
                                     <div class="col-xs-1"><span class="glyphicon glyphicon-edit"></span></div>
                                     <div class="col-xs-1"><span class="glyphicon glyphicon-trash"></span></div>
                                 </td>
@@ -42,7 +43,7 @@ class Todo {
                 // 状态处理
                 value.status ? tr.find('.status').addClass('glyphicon-check') : tr.find('.status').addClass('glyphicon-unchecked');
                 // 填充内容，处理内容样式
-                tr.children('.col-xs-9').text(value.content);
+                tr.children('.col-xs-8').text(value.content);
                 if (value.status) {
                     tr.addClass('completed')
                 }
@@ -133,6 +134,8 @@ class Todo {
                 "text": counter.toString()
             });
             chrome.browserAction.setBadgeBackgroundColor({"color":"red"});
+        } else {
+            chrome.browserAction.setBadgeText({'text': ''});
         }
     }
 
@@ -209,7 +212,7 @@ $(function () {
     // 编辑
     $(document).on('click', '.glyphicon-edit', function (e) {
         // 添加文本框
-        $(e.target).parents('.row').children('.col-xs-9').wrapInner('<textarea rows="1" class="form-control"></textarea>').children('textarea').focus();
+        $(e.target).parents('.row').children('.col-xs-8').wrapInner('<textarea rows="1" class="form-control"></textarea>').children('textarea').focus();
     });
 
 
@@ -220,7 +223,7 @@ $(function () {
             // 更新数据
             todo.edit(getIndex(e), $(_this).val());
         }
-        $(_this).parents('.col-xs-9').text($(_this).val());
+        $(_this).parents('.col-xs-8').text($(_this).val());
         $(_this).remove();
     });
 
@@ -233,6 +236,14 @@ $(function () {
             } else if ($('textarea').is(':focus')) {
                 $('textarea').blur();
             }
+        }
+    });
+
+
+    // 复制内容到剪贴板
+    var clipboard = new Clipboard('.glyphicon-file', {
+        target: function (trigger) {
+            return $(trigger).parents('td').prev().get(0);
         }
     });
 
