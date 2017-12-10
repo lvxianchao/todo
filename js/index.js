@@ -2,6 +2,9 @@ class Todo {
 
     constructor() {
 
+        // mainfest
+        this.mainfest = chrome.runtime.getManifest();
+
         // 颜色映射
         this.color = ['', 'text-primary', 'text-info', 'text-success', 'text-waning', 'text-danger'],
 
@@ -167,6 +170,9 @@ class Todo {
 $(function () {
 
     let todo = new Todo;
+
+    // 填充界面上的版本号
+    $('#version').text(todo.mainfest.version);
 
     // 添加一个新的待办事项
     $('#submit').on('click', function () {
