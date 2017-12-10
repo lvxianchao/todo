@@ -7,4 +7,4 @@ textarea.form-control{ resize: none; }
 .table{ word-break: break-all; }
 
 /* 英文单词截断 */
-.col-xs-9{ word-break: break-word; }
+.col-xs-8{ word-break: break-word; }
